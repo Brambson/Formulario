@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formulario.css">
+    <title>Formulario de cadastro</title>
+</head>
+<body>
+    <h1>Cadastro pessoal</h1>
+    <figure>
+        <img src="icone cadastro.png" alt="Icone de Cadastro"
+        width="100px" height="100px"
+        src="icone cadastro.png" style="position: relative; left: 0px; top: 0px; margin-bottom: 15px;">
+      
+        
+    </figure>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" style="margin-right: 10px;" required>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="phone">Nº Tel: </label>
+            <input type="tel" id="phone" name="phone" placeholder="(XX) XXXX-XXXX" style="margin-top: 5px; margin-right: 12px;" required>
+            <label for="birthday">Aniversario:</label>
+            <input type="date" id="birthday" name="birthday"style="margin-right: 10px;" required>
+            <br>
+            <label for="CPF">CPF: </label>
+            <input type="number" id="CPF" name="CPF" style="margin-top: 5px; margin-left: 9px;" required>
+            <br>
+            <label for="RG">RG: </label>
+            <input type="text" id="RG" name="RG" style="margin-top: 5px; margin-left: 17px;" required>
+            <br>
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo" style="margin-top: 5px; margin-left: 7px;" required>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+            </select>
+        <fieldset>
+            
+
+        <div style="margin-top: 20px;">
+            <legend>Informaçoes de Regiao</legend>
+            <label for="cidade">Cidade: </label>
+            <input type="text" name="Cidade" id="Cidade" style="margin-right: 10px;" required>
+            <label for="CEP">CEP: </label>
+            <input type="number" id="CEP" name="CEP"style="margin-left: 4px;" required>
+            <br>
+            <label for="Estado">Estado: </label>
+            <input type="text" name="Estado" id="Estado" style="margin-top: 5px; margin-left: 1px;" required>
+            <br>
+            <label for="Pais">Pais: </label>
+            <input type="text" name="Pais" id="Pais" style="margin-top: 5px; margin-left: 18px;" required>
+            <br>
+            <label for="Rua">Rua: </label>
+            <input type="text" name="Rua" id="Rua" style="margin-top: 5px; margin-left: 20px;" required>
+            <label for="Numero">Numero: </label>
+            <input type="text" id="Numero" name="Numero" required>
+        </div>
+        
+        <fieldset style="margin-top: 20px;">
+            <legend>Conta</legend>
+            <label for="avatar">Icone:</label>
+            <input type="file" id="avatar" name="avatar" accept="image/*" style="margin-left: 8px">
+            <br>
+            <label for="login">Login: </label>
+            <input type="text" id="login" name="login" style="margin-left: 8px; margin-top: 5px;" required>
+            <br>
+            <label for="senha">Senha: </label>
+            <input type="password" id="senha" name="senha" style="margin-top: 5px; margin-left: 1px; margin-bottom: 15px;" required>
+            <label for="confirmar-senha">Confirmar senha:</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" oninput="validarSenha()">
+        </fieldset>
+
+        <script>
+            function validarSenha() {
+              const senha = document.getElementById('senha');
+              const confirmarSenha = document.getElementById('confirmar-senha');
+              
+              if (senha.value !== confirmarSenha.value) {
+                confirmarSenha.setCustomValidity('As senhas não conferem');
+              } else {
+                confirmarSenha.setCustomValidity('');
+              }
+            }
+            </script>
+        <fieldset>
+            
+        <input type="submit" value="Enviar" id="BotaoEnviar">
+        <input type="reset" value="Limpar" id="BotaoLimpar">
+    </form>
+</body>
+</html>
